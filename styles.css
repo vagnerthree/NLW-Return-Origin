@@ -1,0 +1,405 @@
+:root {
+    font-size: 62.5%;
+    --backgroundColor: #00856F;
+    --hoverBackground: #00453A;
+    --lightColor: #DCE9E2;
+    --lightColor2: #F7F9F9;
+    --gray: #495057;
+    --beige: #FFFAF1;
+    --nav-height: 7.2rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    overflow: overlay;
+    background-color: var(--lightColor2);
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+nav svg {
+    cursor: pointer;
+}
+
+section p {
+    line-height: 150%;
+    color: var(--gray);
+}
+
+section h4 {
+    color: var(--backgroundColor);
+    margin-bottom: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.wrapper {
+    width: 37.5rem;
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+}
+
+.logo path[fill="#00856F"] {
+    fill: var(--backgroundColor);
+}
+
+nav.scroll .logo path[fill="#00856F"] {
+    fill: #FFF;
+}
+
+nav .menu-simbol svg path {
+    stroke: var(--backgroundColor);
+}
+
+#contact li path {
+    stroke: var(--backgroundColor);
+}
+
+#topButton circle {
+    fill: var(--backgroundColor);
+}
+
+/*======== MENU ========*/
+header::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(108rem + var(--nav-height));
+    background-color: var(--lightColor);
+    z-index: -1;
+    position: absolute;
+}
+
+nav {
+    position: fixed;
+    height: 7.2rem;
+    display: flex;
+    z-index: 10;
+    width: 100vw;
+    top: 0;
+    transition: 0.4s;
+}
+
+nav button {
+    background-color: transparent;
+    border: none;
+}
+
+nav .wrapper {
+    display: flex;
+    gap: 15.414rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll {
+    background-color: var(--backgroundColor);
+    width: 100vw;
+    transition: 0.4s;
+}
+
+nav.scroll svg path {
+    fill: #FFF;
+}
+
+nav.scroll button svg path {
+    stroke: #FFF;
+}
+
+nav.scroll .social-media svg path {
+    fill: none;
+}
+
+.menu {
+    transform: translateY(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--backgroundColor);
+    text-align: center;
+    font-size: 2.4rem;
+    color: #FFF;
+    font-weight: bold;
+    visibility: hidden;
+    transition: .5s;
+}
+
+.menu ul {
+    margin-top: var(--nav-height);
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    padding-top: 6rem;
+}
+
+.menu .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.3rem;
+}
+
+.menu button {
+    background-color: #FFF;
+    color: var(--backgroundColor);
+    font-weight: bold;
+    font-size: 1.8rem;
+    border-radius: 4rem;
+    padding: 1.6rem 3.2rem;
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+    transition: .3s;
+}
+
+.menu button:hover {
+    background-color: transparent;
+    color: #FFF;
+    outline: 1px solid #FFF;
+}
+
+body.open-menu {
+    overflow: hidden;
+}
+
+body.open-menu .menu {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+body.open-menu .logo {
+    position: relative;
+    z-index: 1;
+}
+
+body.open-menu .logo path {
+    fill: #FFF;
+}
+
+button.close-simbol {
+    display: none;
+}
+
+body.open-menu .close-simbol {
+    display: inline-block;
+    z-index: 1;
+    background-color: transparent;
+}
+
+body.open-menu .menu-simbol {
+    display: none;
+}
+
+/*======== SECTION HOME ========*/
+section#home {
+    text-align: center;
+    padding-top: calc(4.1rem + var(--nav-height));
+}
+
+#home h1 {
+    font-size: 3.4rem;
+    margin-bottom: 2.4rem;
+}
+
+#home p {
+    font-size: 1.8rem;
+    width: 327px;
+    margin: 0 auto 3.2rem;
+}
+
+.button {
+    background-color: var(--backgroundColor);
+    color: #FFF;
+    border-radius: 40px;
+    width: 263px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: .2s;
+}
+
+.button:hover {
+    background-color: var(--hoverBackground);
+}
+
+#home .button {
+    margin: 0 auto 6rem;
+}
+
+#home span {
+    color: var(--backgroundColor);
+}
+
+#home .infos {
+    background-color: var(--beige);
+    width: 32.7rem;
+    padding-block: 4rem;
+    border: 1px solid var(--lightColor);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6rem;
+    margin-inline: auto;
+}
+
+#home img[alt="mulher sorrindo"] {
+    object-position: 0px 20px;
+    display: block;
+    margin-inline: auto;
+    width: 26.3rem;
+}
+
+#home .info h3 {
+    font-size: 4.8rem;
+    margin-bottom: .4rem;
+}
+
+#home .info span {
+    color: var(--backgroundColor);
+}
+
+/*======== SECTION SERVICES ========*/
+#services {
+    padding-top: 10rem;
+    padding-bottom: 4.3rem;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 3rem;
+}
+
+#services h3 {
+    padding-block: 1.6rem;
+    font-size: 2.3rem;
+}
+
+#services p {
+    font-size: 1.5rem;
+}
+
+#services .cards {
+    display: flex;
+    margin-block: 6rem;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+#services .card {
+    text-align: left;
+    padding: 2.4rem;
+    background-color: #FFF;
+    border-radius: 0.6rem;
+    border: 1px solid var(--lightColor);
+}
+
+/*======== SECTION ABOUT ========*/
+#about {
+    padding-block: 10rem;
+    background-color: var(--beige);
+}
+
+#about h2 {
+    font-size: 3rem;
+    margin-bottom: 2.4rem;
+}
+
+#about p {
+    margin-bottom: 6rem;
+}
+
+/*======== SECTION CONTACT ========*/
+#contact {
+    padding-block: 10rem;
+}
+
+#contact h2 {
+    font-size: 3rem;
+    width: 29.7rem;
+}
+
+#contact ul {
+    padding-block: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+#contact li {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+#contact .button {
+    margin-bottom: 6rem;
+}
+
+/*======== FOOTER ========*/
+footer {
+    background-color: var(--backgroundColor);
+    padding-block: 6rem;
+}
+
+footer .logo {
+    width: 23.6rem;
+    height: 3.1rem;
+    margin-bottom: 2.4rem;
+}
+
+footer .logo path {
+    fill: #FFF;
+}
+
+footer p {
+    line-height: 2;
+    color: var(--beige);
+    margin-bottom: 3.2rem;
+}
+
+footer .social-media a {
+    margin-right: 3.2rem;
+}
+
+/*======== TOP BUTTON ========*/
+#topButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    transform: translateY(-100%);
+}
+
+#topButton.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
